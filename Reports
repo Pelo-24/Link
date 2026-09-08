@@ -1,0 +1,83 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.hospitaladmissionsystem;
+import java.util.ArrayList;
+/**
+ *
+ * @author emeris
+ */
+public class Reports {
+    public void displayAllPatients(ArrayList<Patients> patientList){
+        for (Patients p: patientList){
+            System.out.println(p);
+        }
+        }    
+        public void displayAvailableBeds(Beds[][] beds){
+            for (int rw = 0; rw < beds.length; rw++){
+                for (int col = 0; col < beds[rw].length; col++){
+                    if (!beds[rw][col]. IsOccupied){
+                        System.out.println(beds[rw][col]);
+                    }
+                }
+            }
+        }
+        public void displayOccupiedBeds(Beds[][] beds){
+            for (int rw = 0; rw < beds.length; rw ++ ){
+                for (int col = 0; col < beds[rw].length; col++)
+                    if (beds[rw][col].IsOccupied){
+                        System.out.println(beds[rw][col]);
+                    }}
+                }
+                public void displayTotalPatients(ArrayList<Patients> patientList){
+                System.out.println("Total registered patients: " + patientList.size());
+            } 
+              public void displayOccupancyPercentage(Beds[][] beds ){
+                  int totalBeds = 0;
+                  int occupiedBeds = 0;
+                  
+                  for (int rw = 0; rw <beds.length; rw++){
+                      for(int col = 0; col < beds[rw].length; col++){
+                          totalBeds++;
+                          if (beds[rw][col].IsOccupied){
+                              occupiedBeds++;
+                          }
+                      }
+                      
+                  }
+                  double percentage = (double) occupiedBeds /totalBeds *100;
+                  System.out.print("Ward occupancy: " + percentage + "%");
+              
+        }
+    
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+   
+}

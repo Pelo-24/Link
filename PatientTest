@@ -1,0 +1,57 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
+ */
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList; 
+
+/**
+ *
+ * @author emeris
+ */
+public class PatientTest {
+    
+    public PatientTest() {
+    }
+
+    @org.junit.jupiter.api.BeforeAll
+    public static void setUpClass() throws Exception {
+    }
+
+    @org.junit.jupiter.api.AfterAll
+    public static void tearDownClass() throws Exception {
+    }
+
+    @org.junit.jupiter.api.BeforeEach
+    public void setUp() throws Exception {
+    }
+
+    @org.junit.jupiter.api.AfterEach
+    public void tearDown() throws Exception {
+    }
+       
+    }
+  @Test
+  public void testRegisterPatient(){
+      ArrayList<Patients> patientList = new ArrayList<>();
+      
+      Patients p = new Patients(1, "James", "Carter", 45, 1, "flu", 
+              Patients.PatientCategory.inpatient);
+      
+      patientList.add(p);
+      
+      assertEquals(1, patientList.size());
+      assertEquals(1, patientList.get(0).PatientID);
+      assertEquals("James", patientList.get(0).FirstName);
+      assertEquals("Carter", patientList.get(0).LastName);
+      assertEquals(Patients.PatientCategory.inpatient,patientList.get(0).Category);
+  }
+    
+
+

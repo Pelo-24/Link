@@ -1,0 +1,52 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
+ */
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ *
+ * @author emeris
+ */
+public class AllocateBeds {
+    
+    public AllocateBeds() {
+    }
+    
+    @BeforeAll
+    public static void setUpClass() {
+    }
+    
+    @AfterAll
+    public static void tearDownClass() {
+    }
+    
+    @BeforeEach
+    public void setUp() {
+    }
+    
+    @AfterEach
+    public void tearDown() {
+    }
+   
+    public boolean allocateBed(int patientID){
+        for(int rw = 0; rw < beds.length; rw++){
+            for(int col = 0; col < beds[rw].length; col++){
+                if (!beds[rw][col].IsOccupied){
+                    beds[rw][col].IsOccupied = true;
+                    beds[rw][col].PatientID = patientID;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    
+}

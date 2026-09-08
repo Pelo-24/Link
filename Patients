@@ -1,0 +1,47 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.hospitaladmissionsystem;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author emeris
+ */
+public class Patients {
+    public int PatientID;
+    public String FirstName;
+    public String LastName;
+    public int Age;
+    public int Gender;
+    public String MedicalCondition;
+    public PatientCategory Category;
+    
+    ArrayList<Patients> patientList = new ArrayList();
+    
+    public Patients(int pid, String fn, String ln, int age, int gdr, String mc, PatientCategory cat){
+        this.PatientID = pid;
+        this.FirstName = fn;
+        this.LastName = ln;
+        this.Age = age;
+        this.Gender = gdr;
+        this.MedicalCondition = mc;
+        this.Category = cat;
+        
+    }
+    @Override
+    public String toString(){
+        return "ID: " + this.PatientID + ", Name: " + this.FirstName + " " +this.LastName +
+                ", Age: " + this.Age + ",Gender: " + this.Gender + ", Condition: " + this.MedicalCondition +
+                        ", Category: " + this.Category;
+        }
+    public void displayDetails(){
+        System.out.println(this.toString());
+    }
+    public enum PatientCategory {
+        inpatient,
+        outpatient,
+        emergency,
+    }
+}
